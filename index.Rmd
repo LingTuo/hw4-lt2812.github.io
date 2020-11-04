@@ -24,5 +24,9 @@ These are pictures of some desserts I made before.
 
 <img src="images/desserts.jpg" style="width:75%">
 
+# Link to my resume
 
+Here are more detailed information about me.
+
+[About me](About.html)
 
