@@ -49,7 +49,9 @@ ny_noaa %>%
   mutate(text_label = str_c("ID: ", id)) %>% 
   plot_ly(
     x = ~year, y = ~mean_tmax, color = ~month, colors = "viridis", text = ~text_label, type = "bar", alpha = .5
-  )
+  ) %>% 
+    layout(title = "Average max temperature in January and July",
+           yaxis = list(title = "Average max temperature(C)"))
 ```
 
 Column {data-width=350}
@@ -65,7 +67,9 @@ ny_noaa %>%
   mutate(
     text_label = str_c("Snowfall(mm): ", snow)) %>% 
   plot_ly(
-  x = ~month, y = ~prcp, type = "scatter", alpha = .5, text = ~text_label, mode = "markers", color = ~prcp, colors = "viridis")
+  x = ~month, y = ~prcp, type = "scatter", alpha = .5, text = ~text_label, mode = "markers", color = ~prcp, colors = "viridis") %>%
+  layout(title = "Distribution of precipitation by months",
+         yaxis = list(title = "Precipitation(mm)"))
 ```
 
 ### Chart C
@@ -77,6 +81,8 @@ ny_noaa %>%
   filter(snow < 100 & snow > 0) %>% 
   plot_ly(
     x = ~snow, y = ~year, color = ~year, 
-    type = "box", colors = "viridis")
+    type = "box", colors = "viridis") %>% 
+  layout(title = "Distribution of Snowfall",
+         xaxis = list(title = "Snowfall(mm)"))
 ```
 
