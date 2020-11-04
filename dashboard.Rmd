@@ -1,0 +1,82 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("ny_noaa")
+
+set.seed(100)
+
+ny_noaa =
+  ny_noaa %>% 
+  separate(date, into = c("year", "month", "day"), sep = "-") %>% 
+  mutate(
+    prcp = prcp/10,
+    across(tmax:tmin, as.numeric),
+    tmax = tmax/10,
+    tmin = tmin/10
+  ) %>% 
+  drop_na(prcp, snow, snwd, tmax, tmin) %>% 
+  sample_n(10000, replace = FALSE)
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+This is a bar chart of Average max temperature(C) in January and July.
+
+```{r message = FALSE, warning = FALSE}
+ny_noaa %>% 
+  group_by(id, year, month) %>% 
+  filter(month %in% c("01", "07")) %>% 
+  summarise(
+    mean_tmax = mean(tmax, na.rm = TRUE)) %>%
+  mutate(text_label = str_c("ID: ", id)) %>% 
+  plot_ly(
+    x = ~year, y = ~mean_tmax, color = ~month, colors = "viridis", text = ~text_label, type = "bar", alpha = .5
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+This is a scatter plot about Precipitation(mm) and month.
+
+```{r message = FALSE, warning=FALSE}
+ny_noaa %>%
+  group_by(id, year, month) %>% 
+  mutate(
+    text_label = str_c("Snowfall(mm): ", snow)) %>% 
+  plot_ly(
+  x = ~month, y = ~prcp, type = "scatter", alpha = .5, text = ~text_label, mode = "markers", color = ~prcp, colors = "viridis")
+```
+
+### Chart C
+
+This is a boxplot about snowfall(mm) and year.
+
+```{r}
+ny_noaa %>% 
+  filter(snow < 100 & snow > 0) %>% 
+  plot_ly(
+    x = ~snow, y = ~year, color = ~year, 
+    type = "box", colors = "viridis")
+```
+
