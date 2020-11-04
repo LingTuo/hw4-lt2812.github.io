@@ -6,11 +6,10 @@ output:
     toc_float: true
 ---
 
-This is my brief Resume!
+<img src="images/smile.jpg" style="width:10%">    This is my brief Resume!
 
 # Personal Information
-
-<img src="images/smile.jpg" style="width:10%">
+<img src="images/photo.png" style="width:10%">
 
 Name: Ling Tuo (Hailey)
 
@@ -22,23 +21,32 @@ Email: lt2812@cumc.columbia.edu
 
 # Education Background
 
-## Graduate School
+### Graduate School
 Columbia University, New York, the United States (09/2020-present)
 
 - Master of Science in Biostatistics
+- GPA: 3.5/4.0
+- Third Prize Scholarship for three years in CNU (09/2017; 09/2018; 09/2019)
 
-## Undergraduate School
+### Undergraduate School
 Capital Normal University, Beijing, China (09/2016-07/2020)
 
 - Bachelor of Science in Mathematics and Applied Mathematics 
 
 # Intership Experience
++ China Securities Co., Ltd, Beijing, China (09/2019-10/2019)  Intern Program
+    - Mainly took charge for the IPO project for Tinavi Medical Technologies Co., Ltd
+    - Worked out the IPO prospectus and materials reviewing for a materials company 
+    - Searched for securities rules, regulations and cases for an acquisition program
+    - Read IPO reports, analyzed financial statements, checked contracts and other related documents
+    - Collected relevant information online, conducted data analysis to compose professional reports
 
-- China Securities Co., Ltd, Beijing, China (09/2019-10/2019)
-Intern Program
++ Ernst & Young Hua Ming LLP, Beijing, China (07/2019-08/2019)  Intern, Assurance Department
+    - Prepared audit worksheets and papers for different directories 
+    - Verified and reviewed data and learnt how to work out these documents efficiently by excel
+    - Helped an IPO project to sort out bank receipts of its capital flow
+    - Got a whole picture of auditing process and familiarized with the working procedures
 
-- Ernst & Young Hua Ming LLP, Beijing, China (07/2019-08/2019)
-Intern, Assurance Department
 
 # Interests and Skills
 
