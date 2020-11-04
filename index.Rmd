@@ -1,0 +1,28 @@
+---
+title: "Ling Tuo's website (lt2812)"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Welcome to my website!
+
+![](https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif)
+
+##  Images {.tabset}
+
+### Cute pets
+
+These are some pictures of my best friends' cute pets.
+
+<img src="images/cats.jpg" style="width:75%">
+
+### Desserts
+
+These are pictures of some desserts I made before.
+
+<img src="images/desserts.jpg" style="width:75%">
+
+
+
